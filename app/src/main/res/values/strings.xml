@@ -5,4 +5,6 @@
     <string name="text_home">Home</string>
     <string name="text_add">Adicionar Tarefa</string>
     <string name="text_titulo">Insira o titulo</string>
+    <string name="text_descricao">Insira a descrição</string>
+    <string name="confirmar">Confirmar</string>
 </resources>
