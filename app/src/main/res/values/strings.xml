@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ToYouDo</string>
+    <string name="bt_adicionar_tarefa">Adicionar Nova Tarefa</string>
+    <string name="bt_listar_tarefas">Listar Tarefas</string>
+    <string name="text_home">Home</string>
+    <string name="text_add">Adicionar Tarefa</string>
+    <string name="text_titulo">Insira o titulo</string>
 </resources>
