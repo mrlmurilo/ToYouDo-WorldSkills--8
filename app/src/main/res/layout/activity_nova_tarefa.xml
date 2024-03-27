@@ -54,7 +54,7 @@
 
         <!-- EditText de título -->
         <EditText
-            android:id="@+id/titulo"
+            android:id="@+id/etTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -63,12 +63,12 @@
             android:background="@drawable/rounded_edittext_bg"
             android:inputType="text"
             android:padding="11dp"
-            android:text="@string/text_titulo"
+            android:hint="@string/text_titulo"
             android:textSize="24sp" />
 
         <!-- Segundo EditText -->
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/etDescricao"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_marginStart="16dp"
@@ -76,19 +76,21 @@
             android:layout_marginEnd="16dp"
             android:background="@drawable/rounded_edittext_bg"
             android:gravity="top|start"
-            android:inputType="text"
+            android:inputType="textMultiLine"
             android:padding="11dp"
-            android:text="@string/text_descricao"
-            android:textSize="24sp" />
+            android:hint="@string/text_descricao"
+            android:textSize="24sp"
+            android:importantForAutofill="no" />
 
         <Button
+            android:id="@+id/btAdicionaTarefa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="450dp"
             android:layout_marginStart="125dp"
-            android:textSize="24sp"
+            android:layout_marginTop="450dp"
             android:backgroundTint="@color/mainColor"
-            android:text="@string/confirmar" />
+            android:text="@string/confirmar"
+            android:textSize="24sp" />
 
     </RelativeLayout>
 

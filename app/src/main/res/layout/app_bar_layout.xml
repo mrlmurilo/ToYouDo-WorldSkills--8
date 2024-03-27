@@ -21,10 +21,10 @@
 
 
         <ImageButton
-            android:background="none"
             android:id="@+id/navigationIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/mainColor"
             android:contentDescription="Menu_Home"
             android:src="@drawable/ic_menu"
             tools:ignore="HardcodedText" />
@@ -37,8 +37,7 @@
             android:layout_marginTop="2dp"
             android:layout_marginRight="115dp"
             android:layout_marginBottom="2dp"
-            android:src="@drawable/ic_logo"
-            android:contentDescription="TODO" />
+            android:src="@drawable/ic_logo" />
 
 
     </com.google.android.material.appbar.MaterialToolbar>
