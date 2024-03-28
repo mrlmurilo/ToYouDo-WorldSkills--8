@@ -1,4 +1,4 @@
-package com.murilo.toyoudo.ui
+package com.murilo.toyoudo.ui.activity
 
 import android.os.Bundle
 import android.util.Log
@@ -11,16 +11,18 @@ import com.murilo.toyoudo.modelo.Tarefa
 class NovaTarefaActivity : AppCompatActivity(R.layout.activity_nova_tarefa) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val btAdicionar = findViewById<Button>(R.id.btAdicionaTarefa)
+        val btAdicionar = findViewById<Button>(R.id.btConfirmar)
 
         btAdicionar.setOnClickListener {
+            val id = Math.random().toInt()
             val campoTitulo = findViewById<EditText>(R.id.etTitulo)
             val nome = campoTitulo.text.toString()
-            val campoDescricao = findViewById<EditText>(R.id.etDescricao)
+            val campoDescricao = findViewById<EditText>(R.id.etDesc)
             val descricao = campoDescricao.text.toString()
             val tarefa = Tarefa(
-                nome, descricao
+                id, nome, descricao
             )
+
             Log.i("FormularioTarefa", "onClick: ${tarefa.toString()}")
         }
     }

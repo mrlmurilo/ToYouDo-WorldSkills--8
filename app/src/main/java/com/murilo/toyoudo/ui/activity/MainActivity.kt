@@ -1,4 +1,4 @@
-package com.murilo.toyoudo.ui
+package com.murilo.toyoudo.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,9 +6,11 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.murilo.toyoudo.R
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)  // Infla o layout aqui
+
         val btAddTarefa = findViewById<Button>(R.id.btAdicionaTarefa)
         val btListarTarefas = findViewById<Button>(R.id.btListarTarefas)
 
