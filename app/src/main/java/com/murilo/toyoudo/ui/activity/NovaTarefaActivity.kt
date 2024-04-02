@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.murilo.toyoudo.R
+import com.murilo.toyoudo.dao.TarefasDao
 import com.murilo.toyoudo.modelo.Tarefa
 
 class NovaTarefaActivity : AppCompatActivity(R.layout.activity_nova_tarefa) {
@@ -23,6 +24,8 @@ class NovaTarefaActivity : AppCompatActivity(R.layout.activity_nova_tarefa) {
                 id, nome, descricao
             )
 
+            val dao = TarefasDao()
+            dao.adiciona(tarefa)
             Log.i("FormularioTarefa", "onClick: ${tarefa.toString()}")
         }
     }

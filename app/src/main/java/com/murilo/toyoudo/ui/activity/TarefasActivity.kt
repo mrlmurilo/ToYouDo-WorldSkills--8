@@ -8,17 +8,22 @@ import com.murilo.toyoudo.dao.TarefasDao
 import com.murilo.toyoudo.ui.recyclerview.adapter.ListaTarefasAdapter
 
 class TarefasActivity : AppCompatActivity(R.layout.tarefas_layout) {
+    private val dao = TarefasDao()
+    private val adapter = ListaTarefasAdapter(context = this, tarefas = dao.buscaTodos())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        configuraRecyclerView()
     }
 
     override fun onResume() {
         super.onResume()
+        adapter.atualiza(dao.buscaTodos())
+    }
+
+    private fun configuraRecyclerView(){
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
-        val dao = TarefasDao()
-        recyclerView.adapter = ListaTarefasAdapter(context = this, tarefas= dao.buscaTodos())
+        recyclerView.adapter = adapter
     }
 
 }

@@ -23,5 +23,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, TarefasActivity::class.java)
             startActivity(intent)
         }
+
     }
+
 }
