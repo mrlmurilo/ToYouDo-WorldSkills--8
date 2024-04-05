@@ -1,40 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/mainColor"
+    android:elevation="8dp"
+    app:cardCornerRadius="15dp"
+    android:layout_margin="17dp"
+    >
 
-
-    <LinearLayout
-        android:id="@+id/view_item"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/item_shape"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_margin="8dp">
 
         <TextView
             android:id="@+id/tarefa_item_layout_nome"
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
             android:layout_marginTop="12dp"
-            android:hint="Tarefa"
-            android:textColorHint="@color/white"
-            android:textSize="24sp" />
+            android:layout_marginEnd="15dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="20sp"
+            app:layout_goneMarginEnd="100dp"
+            app:layout_constraintEnd_toStartOf="@id/tarefa_item_layout_btn_deletar"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/lorem/random" />
 
         <ImageButton
             android:id="@+id/tarefa_item_layout_btn_deletar"
-            android:layout_marginTop="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
             android:backgroundTint="@color/mainColor"
-            android:src="@drawable/trash_solid" />
+            android:src="@drawable/trash_solid"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tarefa_item_layout_nome"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

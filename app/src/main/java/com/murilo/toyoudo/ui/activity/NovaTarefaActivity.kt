@@ -1,5 +1,6 @@
 package com.murilo.toyoudo.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -9,10 +10,11 @@ import com.murilo.toyoudo.R
 import com.murilo.toyoudo.dao.TarefasDao
 import com.murilo.toyoudo.modelo.Tarefa
 
-class NovaTarefaActivity : AppCompatActivity(R.layout.activity_nova_tarefa) {
+class NovaTarefaActivity : AppCompatActivity(R.layout.activity_formulario_nova_tarefa) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val btAdicionar = findViewById<Button>(R.id.btConfirmar)
+        val intent = Intent(this, MainActivity::class.java)
 
         btAdicionar.setOnClickListener {
             val id = Math.random().toInt()
@@ -22,11 +24,13 @@ class NovaTarefaActivity : AppCompatActivity(R.layout.activity_nova_tarefa) {
             val descricao = campoDescricao.text.toString()
             val tarefa = Tarefa(
                 id, nome, descricao
+
             )
 
             val dao = TarefasDao()
             dao.adiciona(tarefa)
-            Log.i("FormularioTarefa", "onClick: ${tarefa.toString()}")
+            startActivity(intent)
+
         }
     }
 }

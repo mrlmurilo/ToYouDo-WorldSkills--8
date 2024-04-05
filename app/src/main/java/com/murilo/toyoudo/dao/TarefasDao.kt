@@ -17,4 +17,8 @@ class TarefasDao {
         return tarefas.toList()
     }
 
+    fun deletarTarefa(id: Int) {
+
+    }
+
 }
