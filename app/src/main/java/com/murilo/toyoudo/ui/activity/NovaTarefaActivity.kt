@@ -26,11 +26,9 @@ class NovaTarefaActivity : AppCompatActivity(R.layout.activity_formulario_nova_t
                 id, nome, descricao
 
             )
-
             val dao = TarefasDao()
             dao.adiciona(tarefa)
             startActivity(intent)
-
         }
     }
 }

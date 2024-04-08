@@ -7,7 +7,7 @@ import com.murilo.toyoudo.R
 import com.murilo.toyoudo.dao.TarefasDao
 import com.murilo.toyoudo.ui.recyclerview.adapter.ListaTarefasAdapter
 
-class TarefasActivity : AppCompatActivity(R.layout.tarefas_layout) {
+class ListaTarefasActivity : AppCompatActivity(R.layout.activity_lista_tarefas) {
     private val dao = TarefasDao()
     private val adapter = ListaTarefasAdapter(context = this, tarefas = dao.buscaTodos())
 

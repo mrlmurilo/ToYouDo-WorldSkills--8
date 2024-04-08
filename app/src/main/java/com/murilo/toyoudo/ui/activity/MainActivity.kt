@@ -20,10 +20,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         btListarTarefas.setOnClickListener {
-            val intent = Intent(this, TarefasActivity::class.java)
+            val intent = Intent(this, ListaTarefasActivity::class.java)
             startActivity(intent)
         }
 
     }
-
 }
