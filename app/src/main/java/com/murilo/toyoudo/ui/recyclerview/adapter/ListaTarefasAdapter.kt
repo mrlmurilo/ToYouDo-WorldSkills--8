@@ -41,6 +41,10 @@ class ListaTarefasAdapter(
             intent.putExtra("TAREFA_EXTRA", tarefa)
             return intent
         }
+
+        private fun deletarTarefa() {
+
+        }
     }
 
 

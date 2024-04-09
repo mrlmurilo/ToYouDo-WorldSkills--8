@@ -22,6 +22,9 @@ class TarefaActivity : AppCompatActivity() {
         descricaoTarefa.text = tarefa.descricao
     }
 
+    fun deletar(tarefa: Tarefa){
+
+    }
 
 
 }
