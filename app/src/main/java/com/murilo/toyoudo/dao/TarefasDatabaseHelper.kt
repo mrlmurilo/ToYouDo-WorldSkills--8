@@ -42,4 +42,27 @@ class TarefasDatabaseHelper(context: Context) :
         db.close()
     }
 
+    fun getAllTarefas(): List<Tarefa> {
+        val tarefasList = mutableListOf<Tarefa>()
+        var db = readableDatabase
+        val query = "SELECT * FROM $TABLE_NAME"
+        val cursor = db.rawQuery(query, null)
+
+        while (cursor.moveToNext()) {
+            val id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID))
+            val nome = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NOME))
+            val descricao = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_DESCRICAO))
+
+            val tarefa = Tarefa(id, nome, descricao)
+            tarefasList.add(tarefa)
+        }
+        cursor.close()
+        db.close()
+        return tarefasList
+    }
+
+    fun deleteTarefa(
+
+    ) {}
+
 }
