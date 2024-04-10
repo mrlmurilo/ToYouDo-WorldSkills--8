@@ -28,6 +28,7 @@ class NovaTarefaActivity : AppCompatActivity(R.layout.activity_formulario_nova_t
             val tarefa = Tarefa(
                 id, nome, descricao
             )
+
             val dao = TarefasDatabaseHelper(this)
             dao.insertTarefa(tarefa)
             Toast.makeText(this, "Feita com sucesso", Toast.LENGTH_LONG).show()

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="90dp"
+    android:layout_marginTop="195dp"
+    android:layout_marginEnd="90dp"
+    android:layout_marginBottom="195dp"
+    android:backgroundTint="@color/white"
+    android:elevation="8dp"
+    app:cardCornerRadius="15dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/dialog_confirmacao_exclusao_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="17dp"
+            android:fontFamily="@font/roboto"
+            android:text="Tem certeza que deseja excluir ?"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/dialog_confirmacao_exclusao_btDeletar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:backgroundTint="@color/bt_deletar"
+            android:paddingHorizontal="53dp"
+            android:text="Deletar"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dialog_confirmacao_exclusao_text" />
+
+        <Button
+            android:id="@+id/dialog_confirmacao_exclusao_btCancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/mainColor"
+            android:paddingHorizontal="50dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginStart="0dp"
+            app:layout_constraintEnd_toEndOf="@id/dialog_confirmacao_exclusao_btDeletar"
+            android:text="Cancelar"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="33dp"
+            app:layout_constraintStart_toStartOf="@id/dialog_confirmacao_exclusao_btDeletar"
+            app:layout_constraintTop_toBottomOf="@id/dialog_confirmacao_exclusao_btDeletar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

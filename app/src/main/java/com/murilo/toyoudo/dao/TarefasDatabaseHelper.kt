@@ -10,7 +10,7 @@ class TarefasDatabaseHelper(context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     companion object {
-        private const val DATABASE_NAME = "notesapp.db"
+        private const val DATABASE_NAME = "toYouDo.db"
         private const val DATABASE_VERSION = 1
         private const val TABLE_NAME = "tarefa"
         private const val COLUMN_ID = "id"
@@ -61,8 +61,11 @@ class TarefasDatabaseHelper(context: Context) :
         return tarefasList
     }
 
-    fun deleteTarefa(
-
-    ) {}
+    fun deleteTarefa(id: Int) {
+        val db = writableDatabase
+        val whereClaue = "$COLUMN_ID = ?"
+        val whereArgs = arrayOf(id.toString())
+        db.delete(TABLE_NAME, whereClaue, whereArgs)
+    }
 
 }
