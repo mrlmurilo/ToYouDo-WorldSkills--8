@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.murilo.toyoudo.R
-import com.murilo.toyoudo.dao.TarefasDao
 import com.murilo.toyoudo.dao.TarefasDatabaseHelper
 import com.murilo.toyoudo.ui.recyclerview.adapter.ListaTarefasAdapter
 

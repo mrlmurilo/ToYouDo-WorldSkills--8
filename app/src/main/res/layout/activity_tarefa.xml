@@ -6,12 +6,34 @@
     android:layout_height="match_parent"
     android:background="@color/bg_color">
 
-
-    <include
-        android:id="@+id/appBarLayout"
-        layout="@layout/app_bar_layout"
+    <View
+        android:id="@+id/activity_main_app_bar_layout"
         android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/app_bar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/activity_main_bt_navegar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/mainColor"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintStart_toStartOf="@id/activity_main_app_bar_layout"
+        app:layout_constraintTop_toTopOf="@id/activity_main_app_bar_layout" />
+
+    <ImageView
+        android:id="@+id/activity_main_logo_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="150dp"
+        android:src="@drawable/ic_logo"
+        app:layout_constraintEnd_toEndOf="@+id/activity_main_app_bar_layout"
+        app:layout_constraintStart_toEndOf="@id/activity_main_bt_navegar"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -22,7 +44,7 @@
         android:layout_marginTop="24dp"
         android:src="@drawable/list_icon"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_app_bar_layout" />
 
     <TextView
         android:id="@+id/activity_tarefa_nomeTarefa"
@@ -38,7 +60,7 @@
         app:layout_constraintEnd_toStartOf="@+id/activity_tarefa_bt_excluir"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/activity_tarefa_icon"
-        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        app:layout_constraintTop_toBottomOf="@id/activity_main_app_bar_layout"
         tools:text="@tools:sample/lorem/random" />
 
     <ImageButton
@@ -50,7 +72,7 @@
         android:backgroundTint="@color/bg_color"
         android:src="@drawable/trash_solid"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
+        app:layout_constraintTop_toBottomOf="@id/activity_main_app_bar_layout" />
 
     <View
         android:id="@+id/activity_tarefa_view"
@@ -72,14 +94,14 @@
         android:layout_height="0dp"
         android:layout_marginStart="11dp"
         android:layout_marginTop="7dp"
-        android:layout_marginBottom="40dp"
         android:layout_marginEnd="11dp"
-        app:layout_constraintBottom_toBottomOf="@id/activity_tarefa_view"
-        tools:text="@tools:sample/lorem/random"
+        android:layout_marginBottom="40dp"
         android:textColor="@color/white"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@id/activity_tarefa_view"
         app:layout_constraintEnd_toEndOf="@id/activity_tarefa_view"
         app:layout_constraintStart_toStartOf="@id/activity_tarefa_view"
-        app:layout_constraintTop_toTopOf="@id/activity_tarefa_view" />
+        app:layout_constraintTop_toTopOf="@id/activity_tarefa_view"
+        tools:text="@tools:sample/lorem/random" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
