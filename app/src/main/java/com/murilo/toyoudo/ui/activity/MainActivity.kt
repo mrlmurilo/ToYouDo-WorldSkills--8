@@ -2,6 +2,7 @@ package com.murilo.toyoudo.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.view.animation.Animation
 import android.view.animation.TranslateAnimation
 import android.widget.Button
@@ -18,21 +19,26 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btNovaTarefa: Button
     private lateinit var btListaTarefas: Button
     private lateinit var btNavegar: ImageButton
+    private lateinit var foreground: View
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)  // Infla o layout aqui
 
         // Inicializa os componentes do menu de navegação
-        btNavegar = findViewById(R.id.activity_main_bt_navegar)
-        navigationMenu = findViewById(R.id.activity_main_menuNav)
+        btNavegar = findViewById(R.id.activity_lista_tarefas_bt_navegar)
+        navigationMenu = findViewById(R.id.activity_formulario_nova_tarefa_menuNav)
         btFechar = navigationMenu.findViewById(R.id.navigation_menu_btFechar)
         btHome = navigationMenu.findViewById(R.id.navigation_menu_btHome)
         btNovaTarefa = navigationMenu.findViewById(R.id.navigation_menu_btNovaTarefa)
         btListaTarefas = navigationMenu.findViewById(R.id.navigation_menu_btListaTarefas)
+        foreground = findViewById(R.id.activity_formulario_nova_tarefa_foreground)
+        foreground.setOnTouchListener { _, _ -> true }
 
         // Definir visibilidade inicial como GONE
-        navigationMenu.visibility = android.view.View.GONE
+        navigationMenu.visibility = View.GONE
+        foreground.visibility = View.GONE
 
         btFechar.setOnClickListener {
             val animation = TranslateAnimation(0f, -navigationMenu.width.toFloat(), 0f, 0f)
@@ -46,7 +52,9 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onAnimationEnd(animation: Animation?) {
                     // Método chamado quando a animação termina.
-                    navigationMenu.visibility = android.view.View.GONE
+                    navigationMenu.visibility = View.GONE
+                    foreground.visibility = View.GONE
+
                 }
 
                 override fun onAnimationRepeat(animation: Animation?) {
@@ -96,11 +104,15 @@ class MainActivity : AppCompatActivity() {
             val animation = TranslateAnimation(-navigationMenu.width.toFloat(), 0f, 0f, 0f)
             animation.duration = 1000  // 3 segundos
             navigationMenu.startAnimation(animation)
-            navigationMenu.visibility = android.view.View.VISIBLE
+            navigationMenu.visibility = View.VISIBLE
+            foreground.visibility = View.VISIBLE
+            navigationMenu.elevation = 10f
+            foreground.elevation = 9f
         }
     }
 
     private fun hideNavigationMenu() {
-        navigationMenu.visibility = android.view.View.GONE
+        navigationMenu.visibility = View.GONE
+        foreground.visibility = View.GONE
     }
 }

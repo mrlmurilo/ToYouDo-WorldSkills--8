@@ -7,34 +7,34 @@
     android:background="@color/bg_color">
 
     <View
-        android:id="@+id/activity_main_app_bar_layout"
+        android:id="@+id/activity_tarefa_app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:background="@drawable/app_bar"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/activity_main_bt_navegar"
+        android:id="@+id/activity_formulario_nova_tarefa_bt_navegar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/mainColor"
         android:src="@drawable/ic_menu"
-        app:layout_constraintStart_toStartOf="@id/activity_main_app_bar_layout"
-        app:layout_constraintTop_toTopOf="@id/activity_main_app_bar_layout" />
+        app:layout_constraintStart_toStartOf="@id/activity_tarefa_app_bar_layout"
+        app:layout_constraintTop_toTopOf="@id/activity_tarefa_app_bar_layout" />
 
     <ImageView
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="9dp"
-        android:id="@+id/activity_main_logo_app"
+        android:id="@+id/activity_tarefa_logo_app"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
+        android:layout_marginTop="9dp"
         android:layout_marginEnd="150dp"
         android:src="@drawable/ic_logo"
-        app:layout_constraintEnd_toEndOf="@+id/activity_main_app_bar_layout"
-        app:layout_constraintStart_toEndOf="@id/activity_main_bt_navegar" />
+        app:layout_constraintEnd_toEndOf="@+id/activity_tarefa_app_bar_layout"
+        app:layout_constraintStart_toEndOf="@id/activity_formulario_nova_tarefa_bt_navegar"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/navId"
@@ -44,7 +44,7 @@
         android:layout_marginTop="18dp"
         android:layout_marginEnd="17dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/activity_main_app_bar_layout">
+        app:layout_constraintTop_toBottomOf="@id/activity_tarefa_app_bar_layout">
 
         <ImageView
             android:id="@+id/icon_add"
@@ -54,7 +54,7 @@
             android:layout_marginTop="16dp"
             android:src="@drawable/ic_add"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/activity_main_app_bar_layout" />
+            app:layout_constraintTop_toBottomOf="@+id/activity_tarefa_app_bar_layout" />
 
         <TextView
             android:id="@+id/text_adicionar_tarefa"
@@ -118,18 +118,42 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btConfirmar"
             android:layout_width="wrap_content"
-            android:padding="11dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
             android:layout_marginTop="51dp"
+            android:layout_marginBottom="26dp"
             android:background="@drawable/rounded_button"
+            android:padding="11dp"
             android:text="@string/confirmar"
             android:textColor="@color/white"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginBottom="26dp"
             app:layout_constraintTop_toBottomOf="@id/etTitulo" />
     </LinearLayout>
+
+    <View
+        android:id="@+id/activity_formulario_nova_tarefa_foreground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/foreground_view"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/activity_formulario_nova_tarefa_menuNav" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/activity_formulario_nova_tarefa_menuNav"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        app:cardCornerRadius="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            layout="@layout/navigation_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
